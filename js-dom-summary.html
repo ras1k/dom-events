@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Final DOM Handlers</h1>
+    <h3 id="handler-status">Default text</h3>
+    <p id="default-text">Default Input text</p>
+    <input id="input-field" type="text">
+    <button id="update-button">Update</button>
+    <br> <br>
+    <button onclick="handleOnClick()">Handle event by Add OnClick Function</button> <br> <br>
+    <button id="event-listener">handle event by add event listeners</button>
+</body>
+
+<script>
+    function handleOnClick(){
+        const handlerStatus = document.getElementById('handler-status');  
+         handlerStatus.innerText ='this is changed text'; 
+    };
+
+    document.getElementById('event-listener').addEventListener('mouseover', function(){
+        document.getElementById('handler-status').innerText = 'lol this is so EZ';
+    });
+
+    document.getElementById('update-button').addEventListener('click', function(){
+        // console.log('fff');
+        const text = document.getElementById('input-field');
+
+        // console.log(text.value);
+        const inputText = text.value;
+        document.getElementById('default-text').innerText = inputText;
+        text.value = '';
+    })
+</script>
+
+</html>
